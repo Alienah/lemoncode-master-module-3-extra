@@ -1,0 +1,23 @@
+## npm
+node_modules/
+
+## build
+dist/
+build/
+transpiled/
+
+## config
+yarn.lock
+package-lock.json
+
+## files
+.cache
+*.sol.js
+*.sol.ts
+.admin
+.DS_Store
+*.log
+*.orig
+*/src/**/*.js.map
+.idea/
+desktop.ini
