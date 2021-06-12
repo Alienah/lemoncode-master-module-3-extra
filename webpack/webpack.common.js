@@ -12,7 +12,6 @@ module.exports = {
     app: ['./index.tsx'],
   },
   output: {
-    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -67,12 +66,5 @@ module.exports = {
       scriptLoading: 'blocking',
     }),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
   ],
-  devtool: 'eval-source-map',
-  devServer: {
-    port: 8082,
-  },
 };
