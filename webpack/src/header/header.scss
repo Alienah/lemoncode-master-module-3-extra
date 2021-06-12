@@ -1,0 +1,25 @@
+@import '../base.scss';
+
+.header {
+  background-color: $secondaryColor;
+  color: $lightColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $headerHeight;
+  padding: $size4;
+
+  .logo-container {
+    display: flex;
+    height: $size9;
+  }
+  .logo-container img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .user {
+    @include fontLabelBold;
+    font-size: 24px;
+    cursor: pointer;
+  }
+} 

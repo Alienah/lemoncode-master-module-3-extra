@@ -1,7 +1,7 @@
 import React from "react";
 import { getUser } from '../utils/getUser';
 import logo from '../assets/logo.png';
-import './header.css';
+import './header.scss';
 
 interface UserHeader {
   name: string;

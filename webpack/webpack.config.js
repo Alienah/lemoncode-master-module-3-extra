@@ -36,6 +36,20 @@ module.exports = {
         ],
       },
       {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass")
+            }
+          },
+        ],
+      },
+      {
         test: /\.(png|jpg)$/,
         exclude: /node_modules/,
         type: 'asset/resource',
