@@ -1,0 +1,46 @@
+@import '../base.scss';
+
+.select {
+  position: relative;
+  height: 48px;
+  display: flex;
+}
+
+.value-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: $size2;
+  background-color: inherit;
+  pointer-events: none;
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  padding: $size2;
+}
+
+.select-input {
+  background: transparent;
+  border: none;
+  min-width: $size10;
+  padding: $size2;
+  color: transparent;
+  font-size: 16px;
+  border-radius: $size1;
+  cursor: pointer;
+}
+
+.select-input:focus{ outline: none;}
+
+.select-input option {
+  background-color: $grayColor;
+  border: none;
+  color: $primaryColor;
+}
+
+
