@@ -1,4 +1,4 @@
-const users = [
+export const getUsers = () => ([
   {
     id: "id1",
     name: "Aida",
@@ -9,7 +9,7 @@ const users = [
     name: "Daniela",
     lastname: "Pérez"
   },
-];
+]);
 
 export interface User {
   id: string;
@@ -17,4 +17,4 @@ export interface User {
   lastname: string;
 }
 
-export const getUser = (token: string): User => users.find((user) => user.id === token);
+export const getUser = (users: Array<User>, token: string): User => users.find((user) => user.id === token);

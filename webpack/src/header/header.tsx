@@ -1,33 +1,40 @@
-import React from "react";
-import { getUser } from '../utils/getUser';
+import React from 'react';
+import { getUser, getUsers, User } from '../utils/getUser';
+import { SelectUserInput } from '../selectUserInput';
 import logo from '../assets/logo.png';
 import './header.scss';
 
-interface UserHeader {
+export interface UserHeader {
   name: string;
   lastname: string;
 }
 
-const defaultUser = {
-  name: "User",
-  lastname: "Lastname",
-}
-
 export const Header: React.FC = () => {
-  const [user, setUser] = React.useState<UserHeader>(defaultUser);
+  const [users, setUsers] = React.useState<Array<User>>([]);
+  const [user, setUser] = React.useState<UserHeader>(null);
+  const [userIdSelected, setUserIdSelected] = React.useState<string>("");
+
+  
+  React.useEffect(() => {
+    setUsers(getUsers());
+  }, []);
 
   React.useEffect(() => {
-    setUser(getUser("id1"))
-  },[])
+    setUser(getUser(users, userIdSelected));
+  }, [users, userIdSelected]);
 
-  return <div className="header">
+  React.useEffect(() => {
+    users.length && setUserIdSelected(users[0].id);
+  }, [users]);
+
+  return (
+    <div className="header">
       <div id="logo-container" className="logo-container">
         <img src={logo} alt="logo" />
       </div>
       <div id="user-container" className="user">
-        {user.name.charAt(0)} {user.lastname.charAt(0)}
+        <SelectUserInput onSelect={setUserIdSelected} options={users} userSelected={user} />
       </div>
     </div>
-  ;
+  );
 };
-
