@@ -1,0 +1,23 @@
+{
+  "name": "lemoncode-master-module-3-extra",
+  "version": "1.0.0",
+  "description": "Lemon code master exercises to learn how to create bundles with Parcel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && parcel ./src/index.html",
+    "build:prod": "rimraf dist && parcel build ./src/index.html",
+    "start": "run-p -l type-check:watch start:dev",
+    "start:dev": "rimraf dist && parcel ./src/index.html --open",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
+  },
+  "author": "Aida Albarrán Blanco",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.5",
+    "rimraf": "^2.7.1",
+    "typescript": "^4.3.2"
+  }
+}
