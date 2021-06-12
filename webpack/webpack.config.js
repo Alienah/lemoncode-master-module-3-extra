@@ -6,10 +6,10 @@ const path = require('path');
 module.exports = {
   context: path.join(__dirname, 'src'),
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.ts'],
   },
   entry: {
-    app: ['./index.js'],
+    app: ['./index.ts'],
   },
   output: {
     filename: '[name].[chunkhash].js',
@@ -18,7 +18,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
